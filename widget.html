@@ -21,7 +21,6 @@
 <script type="text/javascript">
     $(document).ready(function() {
         VK.init(function () {
-            alert("ok");
             VK.callMethod("showGroupSettingsBox", 64);
             $("#submit").click(function(){
                 var type = $( "#type" ).val();
@@ -29,6 +28,15 @@
                 console.log(type);
                 console.log(code);
                 VK.callMethod("showAppWidgetPreviewBox", type, code);
+            });
+            VK.addCallback('onAppWidgetPreviewFail', function f(a){
+                alert(a);
+            });
+            VK.addCallback('onAppWidgetPreviewCancel', function f(a){
+                alert(a);
+            });
+            VK.addCallback('onAppWidgetPreviewSuccess', function f(a){
+                alert(a);
             });
         }, function () {
             alert("Ошибка ВК! Перезапустите приложение");

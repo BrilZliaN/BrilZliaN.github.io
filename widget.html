@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
+    <script src="https://vk.com/js/api/xd_connection.js?3" type="text/javascript"></script>
+</head>
+<body>
+<div>
+    <input type="text" id="type">
+</div>
+<br>
+<div>
+<textarea id="code">
+  return false;
+</textarea>
+</div>
+<div>
+    <button id="submit">Отправить</button>
+</div>
+<script type="text/javascript">
+    VK.init(function () {
+    }, function () {
+        alert("Ошибка ВК! Перезапустите приложение");
+    }, '5.68');
+    $(document).ready(function() {
+        $("#submit").click(function(){
+            console.log($( "#type" ).val());
+            console.log($( "#code" ).val());
+            VK.callMethod("showAppWidgetPreviewBox", $( "#type" ).val(), $( "#code" ).val());
+        });
+    });
+</script>
+</body>
+</html>

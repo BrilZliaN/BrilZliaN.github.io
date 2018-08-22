@@ -119,7 +119,7 @@ var calc = function() {
         return;
     }
     percent = Math.max((2 * xscore - xmax) / xmax, 0);
-    var earned = Number(min.val()) + Number(add.val()) * percent;
+    var earned = Math.ceil(Number(min.val()) + Number(add.val()) * percent);
     received.html(earned);
 };
 

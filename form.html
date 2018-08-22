@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.3.3/dist/semantic.min.css">
+    <script
+            src="https://code.jquery.com/jquery-3.1.1.min.js"
+            integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+            crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.3.3/dist/semantic.min.js"></script>
+
+    <meta charset="UTF-8">
+    <title>Тест</title>
+</head>
+<body>
+<div class="ui container">
+    <br />
+    <div class="ui segment">
+        <div class="ui grid">
+            <div class="eleven wide column">
+                <h1 class="ui header">
+                    Расчет
+                </h1>
+                <div class="ui large equal width form">
+                    <h4 class="ui dividing header">Настройки</h4>
+                    <div class="fields">
+                        <div class="field">
+                            <label>Минимум</label>
+                            <input id="min" type="number" placeholder="Сумма" value="80">
+                        </div>
+                        <div class="field">
+                            <label>Добавочно</label>
+                            <input id="add" type="number" value="120">
+                        </div>
+                    </div>
+                    <div class="fields">
+                        <div class="ui field">
+                            <label>Право на ошибку</label>
+                            <div class="ui right labeled input">
+                                <input id="error" type="number" value="93">
+                                <div class="ui label">
+                                    %
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <h4 class="ui dividing header">Работа</h4>
+                    <div class="fields">
+                        <div class="field">
+                            <label>Решено</label>
+                            <input id="score" type="number" type="text" value="19">
+                        </div>
+                        <div class="field">
+                            <label>Максимум баллов за работу</label>
+                            <input id="max" type="number" type="text" value="20">
+                        </div>
+                    </div>
+                    <div class="fields">
+                        <div class="ui field">
+                            <label>Процент выполнения</label>
+                            <div class="ui right labeled input">
+                                <input id="done" type="number" disabled value="95">
+                                <div class="ui label">
+                                    %
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="one wide column">
+            </div>
+            <div class="four wide column">
+                <div class="ui segment">
+                    <div align="center">
+                        <div class="ui statistic">
+                            <div id="received" class="value">
+                                200
+                            </div>
+                            <div class="label">
+                                Получено
+                            </div>
+                        </div>
+                    </div>
+                    <hr>
+                    <div align="center">
+                        <div class="ui statistic">
+                            <div id="salary" class="value">
+                                200
+                            </div>
+                            <div class="label">
+                                Максимально
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+var min = $("#min");
+var max = $("#max");
+var add = $("#add");
+var score = $("#score");
+var received = $("#received");
+var salary = $("#salary");
+var error = $("#error");
+var done = $("#done");
+
+var calc = function() {
+    var x = Number(min.val()) + Number(add.val());
+    received.html(x);
+    salary.html(x);
+    var xscore = Number(score.val());
+    var xmax = Number(max.val());
+    var percent = Math.min((xscore / xmax) * 100, 100);
+    done.val(percent);
+    if (percent > Number(error.val())) {
+        return;
+    }
+    percent = Math.max((2 * xscore - xmax) / xmax, 0);
+    var earned = Number(min.val()) + Number(add.val()) * percent;
+    received.html(earned);
+};
+
+min.bind("change paste keyup", calc);
+add.bind("change paste keyup", calc);
+score.bind("change paste keyup", calc);
+max.bind("change paste keyup", calc);
+error.bind("change paste keyup", calc);
+</script>
+</body>
+</html>

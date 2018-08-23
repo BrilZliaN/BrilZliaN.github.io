@@ -24,15 +24,24 @@
                     <h4 class="ui dividing header">Настройки</h4>
                     <div class="fields">
                         <div class="field">
-                            <label>Минимум</label>
+                            <label>Минимальная сумма</label>
                             <input id="min" type="number" placeholder="Сумма" value="80">
                         </div>
                         <div class="field">
-                            <label>Добавочно</label>
+                            <label>Премия</label>
                             <input id="add" type="number" value="120">
                         </div>
                     </div>
                     <div class="fields">
+                        <div class="ui field">
+                            <label>Необходимо сделать для оплаты</label>
+                            <div class="ui right labeled input">
+                                <input id="need" type="number" value="25">
+                                <div class="ui label">
+                                    %
+                                </div>
+                            </div>
+                        </div>
                         <div class="ui field">
                             <label>Право на ошибку</label>
                             <div class="ui right labeled input">
@@ -47,18 +56,18 @@
                     <div class="fields">
                         <div class="field">
                             <label>Решено</label>
-                            <input id="score" type="number" type="text" value="19">
+                            <input id="score" type="number" value="19">
                         </div>
                         <div class="field">
                             <label>Максимум баллов за работу</label>
-                            <input id="max" type="number" type="text" value="20">
+                            <input id="max" type="number" value="20">
                         </div>
                     </div>
                     <div class="fields">
                         <div class="ui field">
                             <label>Процент выполнения</label>
                             <div class="ui right labeled input">
-                                <input id="done" type="number" disabled value="95">
+                                <input id="done" type="number" readonly value="95">
                                 <div class="ui label">
                                     %
                                 </div>
@@ -98,36 +107,41 @@
     </div>
 </div>
 <script>
-var min = $("#min");
-var max = $("#max");
-var add = $("#add");
-var score = $("#score");
-var received = $("#received");
-var salary = $("#salary");
-var error = $("#error");
-var done = $("#done");
+    var min = $("#min");
+    var max = $("#max");
+    var add = $("#add");
+    var score = $("#score");
+    var received = $("#received");
+    var salary = $("#salary");
+    var error = $("#error");
+    var done = $("#done");
+    var need = $("#need");
 
-var calc = function() {
-    var x = Number(min.val()) + Number(add.val());
-    received.html(x);
-    salary.html(x);
-    var xscore = Number(score.val());
-    var xmax = Number(max.val());
-    var percent = Math.min((xscore / xmax) * 100, 100);
-    done.val(percent);
-    if (percent > Number(error.val())) {
-        return;
-    }
-    percent = Math.max((2 * xscore - xmax) / xmax, 0);
-    var earned = Math.ceil(Number(min.val()) + Number(add.val()) * percent);
-    received.html(earned);
-};
+    var calc = function() {
+        var x = Number(min.val()) + Number(add.val());
+        received.html(x);
+        salary.html(x);
+        var xscore = Number(score.val());
+        var xmax = Number(max.val());
+        var percent = Math.min((xscore / xmax) * 100, 100);
+        done.val(percent);
+        if (percent > Number(error.val())) {
+            return;
+        } else if (percent < Number(need.val())) {
+            received.html("0");
+            return;
+        }
+        percent = Math.max((2 * xscore - xmax) / xmax, 0);
+        var earned = Math.ceil(Number(min.val()) + Number(add.val()) * percent);
+        received.html(earned);
+    };
 
-min.bind("change paste keyup", calc);
-add.bind("change paste keyup", calc);
-score.bind("change paste keyup", calc);
-max.bind("change paste keyup", calc);
-error.bind("change paste keyup", calc);
+    min.bind("change paste keyup", calc);
+    add.bind("change paste keyup", calc);
+    score.bind("change paste keyup", calc);
+    max.bind("change paste keyup", calc);
+    error.bind("change paste keyup", calc);
+    need.bind("change paste keyup", calc);
 </script>
 </body>
 </html>

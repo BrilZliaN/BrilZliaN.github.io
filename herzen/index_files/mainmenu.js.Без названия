@@ -1,0 +1,84 @@
+function getPosition(obj)  //not tested !!!
+{
+  var left=0,top=0;
+  while(obj)
+       {
+	     left+=obj.offsetLeft-obj.scrollLeft;
+         top+=obj.offsetTop-obj.scrollTop;
+        if(obj.style.borderTopWidth!='')
+          top+=parseInt(obj.style.borderTopWidth);
+        if(obj.style.borderLeftWidth!='')
+          left+=parseInt(obj.style.borderLeftWidth);
+        obj=obj.offsetParent;
+	   }
+  return {left:left,top:top};
+}
+function findPosY(obj)
+{
+    var curtop = 0;
+    while (obj)
+    {
+        curtop += obj.offsetTop;
+        obj = obj.offsetParent;
+    }
+    return curtop;
+}
+function findPosX(obj)
+{
+    var curleft = 0;
+    while (obj)
+    {
+        curleft += obj.offsetLeft;
+        obj = obj.offsetParent;
+    }
+    return curleft;
+}
+function hide(div_id)
+{
+ d = document.getElementById(div_id);
+ d.style.display='none';
+}
+function show(div_id)
+{
+ d = document.getElementById(div_id);
+ d.style.display='';
+ parent_id = 'td' + div_id;
+ p = document.getElementById(parent_id);
+ base_x= findPosX(p);
+ base_y= findPosY(p);
+ p_height = p.offsetHeight;
+ p_width = p.offsetWidth;
+if(div_id.length == 6)
+  {
+   d.style.left = base_x ;
+   d.style.top =  base_y + p_height ;
+  }
+if(div_id.length > 6)
+  {
+   d.style.left = base_x + p_width;
+   d.style.top =  base_y;
+  }
+ txt1 = document.getElementById('h'+div_id.length);
+ txt2 = document.getElementById('h'+(2+div_id.length));
+ txt3 = document.getElementById('h'+(4+div_id.length));
+ txt4 = document.getElementById('h'+(6+div_id.length));
+  if(txt1.value != div_id)
+     {
+      if(txt1.value!='0')   hide(txt1.value);
+      if(txt2.value!='0')   hide(txt2.value);
+      if(txt3.value!='0')   hide(txt3.value);
+      if(txt4.value!='0')   hide(txt4.value);
+      txt1.value = div_id;
+     }
+}
+function hideall()
+{
+ txt1 = document.getElementById('h2');
+ txt2 = document.getElementById('h4');
+ txt3 = document.getElementById('h6');
+ txt4 = document.getElementById('h8');
+	  if(txt1.value!='0') hide(txt1.value);
+      if(txt2.value!='0') hide(txt2.value);
+      if(txt3.value!='0') hide(txt3.value);
+      if(txt4.value!='0') hide(txt4.value);
+}

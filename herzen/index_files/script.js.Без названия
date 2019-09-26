@@ -1,0 +1,47 @@
+function chechInquiry(source)
+{
+  d = document.getElementById(source);
+  d.checked = true;
+}
+
+function checkboxes(do_check, elem)
+{
+  var elts = document.forms['search'].elements[elem];
+  if(elts[0])
+    {
+      for(var i = 0; i < elts.length; i++)
+        elts[i].checked = do_check;
+    }
+  else
+      elts.checked = do_check;
+}
+
+function checkstring(form, string, boxes)
+{
+  d  = document.getElementById(form);
+  s  = document.getElementById(string);
+
+  var cond1 = '';
+
+  var elts = document.forms[form].elements[boxes];
+  if(elts[0])
+    {
+      for(var i = 0; i < elts.length; i++)
+        {
+          if(elts[i].checked)
+            cond1 = true;
+        }
+    }
+  else
+    {
+      if(elts.checked)
+        cond1 = true;
+    }
+
+  if(!(s.value))
+    alert("Вы не ввели строку для поиска");
+  else if(!cond1)
+    alert("Вы не выбрали направление поиска");
+  else
+    d.submit();
+}

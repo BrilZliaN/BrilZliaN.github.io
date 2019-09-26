@@ -1,0 +1,109 @@
+HTML            {padding:0;margin:0;height:100%}
+BODY            {padding:0;margin:0;height:100%}
+IMG             {border:0;}
+P               {padding:0px;margin:0px; margin-bottom: 5px;}
+p.zeropadding 	{margin-bottom: 0px;font-weight: normal;}
+TEXTAREA        {padding:3;font-family:tahoma,verdana,arial;}
+TD              {font-family:tahoma,verdana,arial;font-size:14px;color:#454545;}
+div		{font-size:14px;}
+div.leftpad		{padding-left: 25px;}
+
+A               {font-size:14px; COLOR: #6d2f26; TEXT-DECORATION: underline;}
+A:hover         {COLOR: #6d2f26;}
+A:visited       {COLOR: #717171;}
+
+UL              {margin:4 0 4 0;}
+.bold           {FONT-WEIGHT: bold}
+.italic         {FONT-STYLE: italic}
+.underline      {TEXT-DECORATION: underline}
+
+ul.padded li {padding-bottom: 10px; margin-bottom: 10px;}
+
+
+li              {margin:5px 0 -5px 0;line-height: 1.3em;}
+.main_menu TD   			{color:#fff;font-weight:bold;font-size:11px;LINE-HEIGHT:12px;font-family:tahoma,verdana,arial;text-align:center;}
+.main_menu TR TD A 			{color:#fff;font-size:11px;TEXT-DECORATION: none}
+.main_menu TR TD A:hover 	{color:#fff;font-size:11px;TEXT-DECORATION: underline}
+.main_menu TR TD A:visited 	{color:#fff;font-size:11px;TEXT-DECORATION: underline}
+
+.bottom_menu 				{FONT-WEIGHT: normal; FONT-SIZE: 11px; COLOR: #7b433b;font-family:tahoma,verdana,arial;}
+.bottom_menu A 				{FONT-SIZE: 11px; COLOR: #6d2f26; TEXT-DECORATION: underline}
+.bottom_menu A:hover 		{COLOR: #6d2f26;TEXT-DECORATION: underline;}
+.bottom_menu A:visited 		{COLOR: #717171}
+
+.main 						{FONT-WEIGHT: normal; font-size:14px; COLOR: #454545; font-family:tahoma,verdana,arial;}
+.block 			{BORDER: #e5d1cf 1px solid; FONT-SIZE: 11px; COLOR: #4b4b4b;padding:10;background:url(decor3.gif) top right no-repeat; BACKGROUND-COLOR: #f9f1ec;}
+.blockwh 		{BORDER: #e5d1cf 1px solid; FONT-SIZE: 11px; COLOR: #4b4b4b;padding:10;background-color: #f9f1ec;}
+.blockdate 		{BORDER: #e5d1cf 1px solid; FONT-SIZE: 11px; COLOR: #999;padding:10;background-color: #f9f1ec;}
+.blockdate div 		{FONT-SIZE: 11px; COLOR: #999; background-color: #f9f1ec;}
+.block_clear 			{BORDER: #e5d1cf 1px solid; FONT-SIZE: 11px; COLOR: #4b4b4b; BACKGROUND-COLOR: #f9f1ec;padding:5;}
+iframe { BACKGROUND-COLOR: #f9f1ec;}
+.block A 		{FONT-SIZE: 12px}
+.block P 		{FONT-WEIGHT: normal; FONT-SIZE: 11px}
+.block_header 	{border:#5f2e28 1px solid;font-family:tahoma,verdana,arial;padding:5 0 5 8px;FONT-WEIGHT: bold; font-size:12px;COLOR:#fff;BACKGROUND-COLOR:#964e45;}
+
+div.banners, .block div {margin-top: 30px; text-align: center;}
+
+.block_main 	{FONT-WEIGHT: normal; FONT-SIZE: 11px; COLOR: #4b4b4b; font-family:tahoma,verdana,arial;}
+.block_main TD 	{FONT-WEIGHT: normal; FONT-SIZE: 11px; COLOR: #4b4b4b; font-family:tahoma,verdana,arial;}
+.block_main A 	{COLOR: #6d2f26; TEXT-DECORATION: underline}
+.block_main A:hover 	{COLOR: #6d2f26}
+.block_dark 			{FONT-WEIGHT: bold; FONT-SIZE: 11px; COLOR: #214d31; font-family:tahoma,verdana,arial;}
+.block_dark A 			{COLOR: #6d2f26; TEXT-DECORATION: underline}
+.block_dark A:hover 	{COLOR: #6d2f26}
+.block_dark A:visited 	{COLOR: #717171}
+
+H1, h1 a, h1 a:hover, h1 a:visited 			{font-size:18px;padding: 0 0 10 0;margin:0;COLOR:#964e45;font-family:tahoma,verdana,arial;}
+H2, h2 a, h2 a:hover, h2 a:visited, .block h2 a, .block h2 a:hover, .block h2 a:visited 			{font-size:16px;padding:5 0 5 0;margin:0;FONT-WEIGHT: bold;COLOR:#964e45;font-family:tahoma,verdana,arial;}
+.h2 			{PADDING-RIGHT: 10px; PADDING-LEFT: 10px; FONT-WEIGHT: bold; font-size:12px; PADDING-BOTTOM: 3px; COLOR: #363636; PADDING-TOP: 3px; font-family:tahoma,verdana,arial; BACKGROUND-COLOR: #f9f1ec;text-align: center}
+h3				{font-size:15px;padding:5 0 5 0;margin:0; margin-bottom: 0px;}
+.h2_bg 			{PADDING-RIGHT: 10px; PADDING-LEFT: 10px; PADDING-BOTTOM: 3px; MARGIN: 0px; PADDING-TOP: 3px; BACKGROUND-COLOR: #f9f1ec}
+
+
+INPUT.flat 			{BORDER-RIGHT: #e5d1cf 1px solid; BORDER-TOP: #e5d1cf 1px solid; FONT-SIZE: 11px; BORDER-LEFT: #e5d1cf 1px solid; COLOR: #4b4b4b; BORDER-BOTTOM: #e5d1cf 1px solid; font-family:tahoma,verdana,arial; BACKGROUND-COLOR: #ffffff}
+INPUT.small 		{FONT-WEIGHT: normal; FONT-SIZE: 11px; COLOR: #4b4b4b; font-family:tahoma,verdana,arial;}
+INPUT.transparent 	{BORDER-RIGHT: 0px; BORDER-TOP: 0px; BORDER-LEFT: 0px; BORDER-BOTTOM: 0px; BACKGROUND-COLOR: transparent}
+
+.news_container, .block div.news_container, .events_container {
+	display: inline-block; margin-top: 0px; text-align: left;
+}
+.news_container {
+    width: 100%;
+}
+
+.tiny			{FONT-SIZE: 10px; font-family:tahoma,verdana,arial;}
+.news_pic		{BORDER-RIGHT: #ffffff 10px solid; BORDER-BOTTOM: #ffffff 10px solid}
+.itemTable		{DISPLAY: none; LEFT: 0px; CURSOR: default; POSITION: absolute; TOP: 0px}
+.tablitsa		{BORDER-RIGHT: #a3635b 1px solid; BORDER-TOP: #a3635b 1px solid; FILTER: alpha(opacity=87,style=3,finishOpacity=87); BACKGROUND-IMAGE: url(/images/common/dropdown_bg.png); BORDER-LEFT: #a3635b 1px solid; BORDER-BOTTOM: #a3635b 1px solid}
+.tdMainItem 	{CURSOR: hand}
+
+.tdItem 			{FONT-WEIGHT: bold; FONT-SIZE: 11px; CURSOR: hand; COLOR: #6d2f26; FONT-FAMILY: Arial}
+.tdItem A 			{FONT-WEIGHT: bold; FONT-SIZE: 11px; FILTER: alpha(opacity=100,style=3,finishOpacity=100); CURSOR: hand; COLOR: #6d2f26; FONT-FAMILY: Arial; TEXT-DECORATION: none}
+.tdItem A:hover 	{FILTER: alpha(opacity=100,style=3,finishOpacity=100); TEXT-DECORATION: underline}
+.tdItem A:visited 	{FILTER: alpha(opacity=100,style=3,finishOpacity=100); COLOR: #6d2f26}
+
+.dropdown_t_l 	{BORDER-TOP: #a3635b 1px solid; FILTER: alpha(opacity=91,style=3,finishOpacity=91); BACKGROUND-IMAGE: url(/images/common/dropdown_bg.png); BORDER-LEFT: #a3635b 1px solid}
+.dropdown_t_r 	{BORDER-RIGHT: #a3635b 1px solid; BORDER-TOP: #a3635b 1px solid; FILTER: alpha(opacity=91,style=3,finishOpacity=91); BACKGROUND-IMAGE: url(/images/common/dropdown_bg.png)}
+.dropdown_b_l 	{FILTER: alpha(opacity=91,style=3,finishOpacity=91); BACKGROUND-IMAGE: url(/images/common/dropdown_bg.png); BORDER-LEFT: #a3635b 1px solid; BORDER-BOTTOM: #a3635b 1px solid}
+.dropdown_b_r 	{BORDER-RIGHT: #a3635b 1px solid; PADDING-RIGHT: 7px; PADDING-LEFT: 4px; FILTER: alpha(opacity=91,style=3,finishOpacity=91); BACKGROUND-IMAGE: url(/images/common/dropdown_bg.png); PADDING-BOTTOM: 7px; PADDING-TOP: 4px; BORDER-BOTTOM: #a3635b 1px solid}
+.dropdown_fade 	{FILTER: alpha(opacity=45,style=3,finishOpacity=45); BACKGROUND-IMAGE: url(/images/dropdown_fade.png)}
+
+.menuItem 			{BORDER-RIGHT: #6d2f26 1px solid; BORDER-TOP: #6d2f26 1px solid; FONT-WEIGHT: bold; FONT-SIZE: 11px; FILTER: alpha(opacity=90); BORDER-LEFT: #6d2f26 1px solid; CURSOR: hand; COLOR: #6d2f26; BORDER-BOTTOM: #6d2f26 1px solid; FONT-FAMILY: Arial; BACKGROUND-COLOR: #f9f1ec; opacity: .9}
+.menuItem A 		{FONT-WEIGHT: bold; FONT-SIZE: 11px; CURSOR: hand; COLOR: #6d2f26; FONT-FAMILY: Arial; TEXT-DECORATION: none}
+.menuItem A:hover 	{TEXT-DECORATION: underline}
+
+.mainmenuitem 				{font-size:11px;CURSOR:hand;color:#fff;font-family:tahoma,verdana,arial;background-color:#964e45;text-decoration:none;}
+.mainmenuitem A 			{font-size:11px;font-weight:bold;CURSOR:hand;color:#fff;font-family:tahoma,verdana,arial;background-color:#964e45;text-decoration:none;}
+.mainmenuitem A:hover 		{font-size:11px;font-weight:bold;CURSOR:hand;color:#fff;font-family:tahoma,verdana,arial;background-color:#964e45;text-decoration:underline;}
+.mainmenuitem A:visited 	{font-size:11px;font-weight:bold;CURSOR:hand;color:#fff;font-family:tahoma,verdana,arial;background-color:#964e45;text-decoration:none;}
+
+
+.png {
+//background-image: none ! important;
+behavior: url('pngfix.htc');
+}
+.tdrow  {border-top:#b1b1b1 1px solid;}
+
+ .zindex-top {
+ 	z-index: 1000;
+ }

@@ -36,22 +36,22 @@
     header > button {
         margin-left: 3em;
     }
-    .city {
-    }
     summary > .name {
         font-size: 18pt;
+        font-weight: bold;
     }
-    summary > .image {
+    .selected > summary > .name {
+        font-size: 28pt;
+    }
+    summary > .image, .data > .image {
         border: 4px;
         border-color: gray;
-    }
-    summary > .image {
         width: 64px;
         height: 64px;
         background-image: url("weather.png");
         background-size: cover;
     }
-    .selected > summary > .image {
+    .selected > summary > .data > .image {
         width: 128px;
         height: 128px;
     }
@@ -60,7 +60,7 @@
         font-weight: bold;
         color: #7C7C7C;
     }
-    .selected > summary > .degrees {
+    .selected > summary > .data > .degrees {
         font-size: 48pt;
     }
     .cities,.selected.city { 
@@ -78,13 +78,28 @@
     .detail .label {
         font-weight: bold;
     }
-    .detail, .favourites, :not(.selected) > summary.weather {
+    .detail, .favourites, :not(.selected) > summary.weather, summary.weather > .data {
         display: flex;
         flex-wrap: nowrap;
         justify-content: space-between;
         align-items: flex-end;
     }
-    @media only screen and (max-width: 768px) { 
+    .selected > summary > .data {
+        margin-top: 1vw;
+        align-items: flex-start;
+    }
+    .favourites {
+        align-items: middle;
+    }
+    .favourites > .label > h1 {
+        margin: 0;
+    }
+    .favourites > .control > input {
+        height: 100%;
+        width: 30vw;
+        padding: 0;
+    }
+    @media only screen and (max-width: 960px) { 
         body {
             margin: 0 2.5vw;
         }
@@ -113,10 +128,12 @@
             <div class="name">
                 Saint-Petersburg
             </div>
-            <div class="degrees">
-                99 °C
-            </div>
-            <div class="image">
+            <div class="data">
+                <div class="image">
+                </div>
+                <div class="degrees">
+                    99 °C
+                </div>
             </div>
         </summary>
         <div class="weather details">

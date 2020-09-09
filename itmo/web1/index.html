@@ -5,6 +5,73 @@
     <meta name="author" content="Захаров Илья, M33342">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Погода</title>
+    
+    <style>
+    body {
+        font-family: sans-serif;
+        color: #758084;
+    }
+    button {
+        background-color: #C9D2D7;
+        color: #6A757A;
+        border: none;
+    }
+    .header {
+        display: flex;
+        flex-wrap: wrap;
+        font-family: serif;
+    }
+    .header > button {
+
+    }
+    .favourites > .control {
+        float: right;
+    }
+    .city {
+    }
+    .summary > .name {
+        font-size: 18pt;
+    }
+    .summary > .image {
+        border: 4px;
+        border-color: gray;
+    }
+    .summary > .image {
+        width: 32px;
+        height: 32px;
+        background-image: url("https://icons-for-free.com/iconfiles/png/512/day+forecast+shine+sun+weather+icon-1320183298516188350.png");
+        background-size: cover;
+    }
+    .selected > .summary > .image {
+        width: 128px;
+        height: 128px;
+    }
+    .summary > .degrees {
+        font-size: 28pt;
+        font-weight: bold;
+        color: #7C7C7C;
+    }
+    .selected > .summary > .degrees {
+        font-size: 48pt;
+    }
+    .cities, .selected.city { 
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 2vw;
+    }
+    .detail {
+        background-color: #A7AFB1;
+        color: white;
+        margin: 0.5em 0;
+        padding: 0.4em;
+    }
+    .detail .label {
+        font-weight: bold;
+    }
+    .detail .text {
+        float: right;
+    }
+    </style>
 </head>
 <body>
     <div class="header">

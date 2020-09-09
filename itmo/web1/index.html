@@ -10,54 +10,64 @@
     body {
         font-family: sans-serif;
         color: #758084;
+        margin: 0 12.5vw;
     }
     button {
         background-color: #C9D2D7;
         color: #6A757A;
         border: none;
+        border-radius: 64px;
     }
-    .header {
+    header > button {
+        border-radius: 16px;
+        padding: 0 3em;
+        margin: 1em 0;
+    }
+    :not(header) > button {
+        width: 48px;
+        height: 48px;
+    }
+    header {
         display: flex;
         flex-wrap: wrap;
         font-family: serif;
+        align-items: middle;
     }
-    .header > button {
-
-    }
-    .favourites > .control {
-        float: right;
+    header > button {
+        margin-left: 3em;
     }
     .city {
     }
-    .summary > .name {
+    summary > .name {
         font-size: 18pt;
     }
-    .summary > .image {
+    summary > .image {
         border: 4px;
         border-color: gray;
     }
-    .summary > .image {
-        width: 32px;
-        height: 32px;
+    summary > .image {
+        width: 64px;
+        height: 64px;
         background-image: url("https://icons-for-free.com/iconfiles/png/512/day+forecast+shine+sun+weather+icon-1320183298516188350.png");
         background-size: cover;
     }
-    .selected > .summary > .image {
+    .selected > summary > .image {
         width: 128px;
         height: 128px;
     }
-    .summary > .degrees {
+    summary > .degrees {
         font-size: 28pt;
         font-weight: bold;
         color: #7C7C7C;
     }
-    .selected > .summary > .degrees {
+    .selected > summary > .degrees {
         font-size: 48pt;
     }
-    .cities, .selected.city { 
+    .cities,.selected.city { 
         display: grid;
         grid-template-columns: 1fr 1fr;
-        grid-gap: 2vw;
+        column-gap: 5vw;
+        row-gap: 3vw;
     }
     .detail {
         background-color: #A7AFB1;
@@ -68,304 +78,430 @@
     .detail .label {
         font-weight: bold;
     }
-    .detail .text {
-        float: right;
+    .detail, .favourites, :not(.selected) > summary.weather {
+        display: flex;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+        align-items: flex-end;
+    }
+    @media only screen and (max-width: 768px) { 
+        body {
+            margin: 0 2.5vw;
+        }
+        .cities,.selected.city { 
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-gap: 2vw;
+        }
+        header > button {
+            color: transparent;
+            font-size: 1pt;
+            width: 64px;
+            height: 64px;
+            margin-left: 3vw;
+        }
     }
     </style>
 </head>
 <body>
-    <div class="header">
+    <header>
         <h1>Погода здесь</h1>
         <button>Обновить геолокацию</button>
-    </div>
+    </header>
     <div class="selected city">
-        <div class="weather summary">
+        <summary class="weather">
             <div class="name">
                 Saint-Petersburg
             </div>
             <div class="degrees">
-                666 °C
+                99 °C
             </div>
             <div class="image">
             </div>
-        </div>
+        </summary>
         <div class="weather details">
             <div class="detail">
-                <div class="text">
-                    6.0 m/s, North-northwest
-                </div>
                 <div class="label">
                     Ветер
                 </div>
+                <div class="text">
+                    6.0 m/s, North-northwest
+                </div>
             </div>
             <div class="detail">
-                <div class="text">
-                    Broken clouds
-                </div>
                 <div class="label">
                     Облачность
                 </div>
+                <div class="text">
+                    Broken clouds
+                </div>
             </div>
             <div class="detail">
-                <div class="text">
-                    1013 hpa
-                </div>
                 <div class="label">
                     Давление
                 </div>
-            </div>
-            <div class="detail">
                 <div class="text">
                     1013 hpa
                 </div>
+            </div>
+            <div class="detail">
                 <div class="label">
                     Влажность
                 </div>
+                <div class="text">
+                    40 %
+                </div>
             </div>
             <div class="detail">
-                <div class="text">
-                    [0.0, 0.0]
-                </div>
                 <div class="label">
                     Координаты
+                </div>
+                <div class="text">
+                    [0.0, 0.0]
                 </div>
             </div>
         </div>
     </div>
     <div class="favourites">
-        <div class="control">
-            <input></input>
-            <button class="add" />
-        </div>
         <div class="label">
             <h1>Избранное</h1>
+        </div>
+         <div class="control">
+            <input></input>
+            <button class="add" />
         </div>
     </div>
     <div class="cities">
         <div class="city">
-            <div class="weather summary">
+            <summary class="weather">
                 <div class="name">
                     Saint-Petersburg
                 </div>
                 <div class="degrees">
-                    666 °C
+                    99 °C
                 </div>
                 <div class="image">
-
                 </div>
                 <button class="close" />
-            </div>
+            </summary>
             <div class="weather details">
                 <div class="detail">
-                    <div class="text">
-                        6.0 m/s, North-northwest
-                    </div>
                     <div class="label">
                         Ветер
                     </div>
+                    <div class="text">
+                        6.0 m/s, North-northwest
+                    </div>
                 </div>
                 <div class="detail">
-                    <div class="text">
-                        Broken clouds
-                    </div>
                     <div class="label">
                         Облачность
                     </div>
+                    <div class="text">
+                        Broken clouds
+                    </div>
                 </div>
                 <div class="detail">
-                    <div class="text">
-                        1013 hpa
-                    </div>
                     <div class="label">
                         Давление
                     </div>
-                </div>
-                <div class="detail">
                     <div class="text">
                         1013 hpa
                     </div>
+                </div>
+                <div class="detail">
                     <div class="label">
                         Влажность
                     </div>
+                    <div class="text">
+                        40 %
+                    </div>
                 </div>
                 <div class="detail">
-                    <div class="text">
-                        [0.0, 0.0]
-                    </div>
                     <div class="label">
                         Координаты
+                    </div>
+                    <div class="text">
+                        [0.0, 0.0]
                     </div>
                 </div>
             </div>
         </div>
         <div class="city">
-            <div class="weather summary">
+            <summary class="weather">
                 <div class="name">
                     Saint-Petersburg
                 </div>
                 <div class="degrees">
-                    666 °C
+                    99 °C
                 </div>
                 <div class="image">
-
                 </div>
                 <button class="close" />
-            </div>
+            </summary>
             <div class="weather details">
                 <div class="detail">
-                    <div class="text">
-                        6.0 m/s, North-northwest
-                    </div>
                     <div class="label">
                         Ветер
                     </div>
+                    <div class="text">
+                        6.0 m/s, North-northwest
+                    </div>
                 </div>
                 <div class="detail">
-                    <div class="text">
-                        Broken clouds
-                    </div>
                     <div class="label">
                         Облачность
                     </div>
+                    <div class="text">
+                        Broken clouds
+                    </div>
                 </div>
                 <div class="detail">
-                    <div class="text">
-                        1013 hpa
-                    </div>
                     <div class="label">
                         Давление
                     </div>
-                </div>
-                <div class="detail">
                     <div class="text">
                         1013 hpa
                     </div>
+                </div>
+                <div class="detail">
                     <div class="label">
                         Влажность
                     </div>
+                    <div class="text">
+                        40 %
+                    </div>
                 </div>
                 <div class="detail">
-                    <div class="text">
-                        [0.0, 0.0]
-                    </div>
                     <div class="label">
                         Координаты
+                    </div>
+                    <div class="text">
+                        [0.0, 0.0]
                     </div>
                 </div>
             </div>
         </div>
         <div class="city">
-            <div class="weather summary">
+            <summary class="weather">
                 <div class="name">
                     Saint-Petersburg
                 </div>
                 <div class="degrees">
-                    666 °C
+                    99 °C
                 </div>
                 <div class="image">
-
                 </div>
                 <button class="close" />
-            </div>
+            </summary>
             <div class="weather details">
                 <div class="detail">
-                    <div class="text">
-                        6.0 m/s, North-northwest
-                    </div>
                     <div class="label">
                         Ветер
                     </div>
+                    <div class="text">
+                        6.0 m/s, North-northwest
+                    </div>
                 </div>
                 <div class="detail">
-                    <div class="text">
-                        Broken clouds
-                    </div>
                     <div class="label">
                         Облачность
                     </div>
+                    <div class="text">
+                        Broken clouds
+                    </div>
                 </div>
                 <div class="detail">
-                    <div class="text">
-                        1013 hpa
-                    </div>
                     <div class="label">
                         Давление
                     </div>
-                </div>
-                <div class="detail">
                     <div class="text">
                         1013 hpa
                     </div>
+                </div>
+                <div class="detail">
                     <div class="label">
                         Влажность
                     </div>
+                    <div class="text">
+                        40 %
+                    </div>
                 </div>
                 <div class="detail">
-                    <div class="text">
-                        [0.0, 0.0]
-                    </div>
                     <div class="label">
                         Координаты
+                    </div>
+                    <div class="text">
+                        [0.0, 0.0]
                     </div>
                 </div>
             </div>
         </div>
         <div class="city">
-            <div class="weather summary">
+            <summary class="weather">
                 <div class="name">
                     Saint-Petersburg
                 </div>
                 <div class="degrees">
-                    666 °C
+                    99 °C
                 </div>
                 <div class="image">
-
                 </div>
                 <button class="close" />
-            </div>
+            </summary>
             <div class="weather details">
                 <div class="detail">
-                    <div class="text">
-                        6.0 m/s, North-northwest
-                    </div>
                     <div class="label">
                         Ветер
                     </div>
+                    <div class="text">
+                        6.0 m/s, North-northwest
+                    </div>
                 </div>
                 <div class="detail">
-                    <div class="text">
-                        Broken clouds
-                    </div>
                     <div class="label">
                         Облачность
                     </div>
+                    <div class="text">
+                        Broken clouds
+                    </div>
                 </div>
                 <div class="detail">
-                    <div class="text">
-                        1013 hpa
-                    </div>
                     <div class="label">
                         Давление
                     </div>
-                </div>
-                <div class="detail">
                     <div class="text">
                         1013 hpa
                     </div>
+                </div>
+                <div class="detail">
                     <div class="label">
                         Влажность
                     </div>
+                    <div class="text">
+                        40 %
+                    </div>
                 </div>
                 <div class="detail">
-                    <div class="text">
-                        [0.0, 0.0]
-                    </div>
                     <div class="label">
                         Координаты
+                    </div>
+                    <div class="text">
+                        [0.0, 0.0]
                     </div>
                 </div>
             </div>
         </div>
-    </div>
+        <div class="city">
+            <summary class="weather">
+                <div class="name">
+                    Saint-Petersburg
+                </div>
+                <div class="degrees">
+                    99 °C
+                </div>
+                <div class="image">
+                </div>
+                <button class="close" />
+            </summary>
+            <div class="weather details">
+                <div class="detail">
+                    <div class="label">
+                        Ветер
+                    </div>
+                    <div class="text">
+                        6.0 m/s, North-northwest
+                    </div>
+                </div>
+                <div class="detail">
+                    <div class="label">
+                        Облачность
+                    </div>
+                    <div class="text">
+                        Broken clouds
+                    </div>
+                </div>
+                <div class="detail">
+                    <div class="label">
+                        Давление
+                    </div>
+                    <div class="text">
+                        1013 hpa
+                    </div>
+                </div>
+                <div class="detail">
+                    <div class="label">
+                        Влажность
+                    </div>
+                    <div class="text">
+                        40 %
+                    </div>
+                </div>
+                <div class="detail">
+                    <div class="label">
+                        Координаты
+                    </div>
+                    <div class="text">
+                        [0.0, 0.0]
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="city">
+            <summary class="weather">
+                <div class="name">
+                    Saint-Petersburg
+                </div>
+                <div class="degrees">
+                    99 °C
+                </div>
+                <div class="image">
+                </div>
+                <button class="close" />
+            </summary>
+            <div class="weather details">
+                <div class="detail">
+                    <div class="label">
+                        Ветер
+                    </div>
+                    <div class="text">
+                        6.0 m/s, North-northwest
+                    </div>
+                </div>
+                <div class="detail">
+                    <div class="label">
+                        Облачность
+                    </div>
+                    <div class="text">
+                        Broken clouds
+                    </div>
+                </div>
+                <div class="detail">
+                    <div class="label">
+                        Давление
+                    </div>
+                    <div class="text">
+                        1013 hpa
+                    </div>
+                </div>
+                <div class="detail">
+                    <div class="label">
+                        Влажность
+                    </div>
+                    <div class="text">
+                        40 %
+                    </div>
+                </div>
+                <div class="detail">
+                    <div class="label">
+                        Координаты
+                    </div>
+                    <div class="text">
+                        [0.0, 0.0]
+                    </div>
+                </div>
+            </div>
+        </div>
+     </div>
 </body>
 </html>

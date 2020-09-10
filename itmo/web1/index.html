@@ -15,9 +15,14 @@
     button {
         background-color: #C9D2D7;
         color: #6A757A;
-        border: none;
+        border-style: solid;
+        border-color: #C9D2D7;
         border-radius: 64px;
     }
+    button:focus:not(:active) {
+        border-color: gray;
+        background-color: #9EA4A8;
+    }   
     header > button {
         border-radius: 16px;
         padding: 0 3em;

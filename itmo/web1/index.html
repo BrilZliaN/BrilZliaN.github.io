@@ -84,6 +84,14 @@
         justify-content: space-between;
         align-items: flex-end;
     }
+    .favourites > .control {
+        display: flex;
+        flex-wrap: nowrap;
+        align-items: flex-end;
+    }
+    .favourites > .control > * {
+        margin-left: 1vw;
+    }
     .selected > summary > .data {
         margin-top: 1vw;
         align-items: flex-start;
@@ -198,7 +206,7 @@
         <div class="label">
             <h1>Избранное</h1>
         </div>
-         <div class="control">
+        <div class="control">
             <input placeholder="Добавить новый город"></input>
             <button class="add" />
         </div>

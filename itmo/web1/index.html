@@ -41,9 +41,6 @@
     header > button {
         margin-left: 3em;
     }
-    .city {
-        margin: 1vw 0;
-    }
     h2 {
         font-size: 24pt;
         margin: 0;
@@ -90,21 +87,19 @@
     .detail .label {
         font-weight: bold;
     }
-    .detail, .favourites, :not(.selected) > summary.weather, summary.weather > .data {
+    .detail, .favourites, .favourites > .control, :not(.selected) > summary.weather, summary.weather > .data {
         display: flex;
         flex-wrap: nowrap;
         justify-content: space-between;
-        align-items: flex-end;
-    }
-    .favourites > .control {
-        display: flex;
-        flex-wrap: nowrap;
         align-items: flex-end;
     }
     ul {
         margin: 0;
         padding: 0;
         list-style-type: none;
+    }
+    .favourites {
+        margin-top: 2vw;
     }
     .favourites > .control > * {
         margin-left: 1vw;
@@ -113,10 +108,9 @@
         margin-top: 1vw;
         align-items: flex-start;
     }
-    .favourites > .label {
-    }
-    .favourites > .label > h2 {
+    .favourites > h2 {
         margin: 0;
+        width: 100%;
     }
     .favourites > .control > input {
         height: 32px;
@@ -154,8 +148,18 @@
             background: url("refresh.svg") no-repeat;
             background-color: #C9D2D7;
         }
-        favourites {
-            flex-wrap: wrap;
+        .favourites {
+            display: block;
+        }
+        .favourites > * {
+            margin: 2vw 0;
+        }
+        .favourites > .control > input {
+            width: 90vw;
+            margin-right: 2vw;
+        }
+        .favourites > .control > * {
+            margin-left: 0;
         }
         summary > .degrees {
             font-size: 18pt;

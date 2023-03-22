@@ -1,3 +1,4 @@
+# Credits for String data and HEVC: https://github.com/farag2/Sophia-Script-for-Windows
 $Localization = ConvertFrom-StringData -StringData @'
 UnsupportedOSBitness                      = The script supports Windows 10 x64 only
 UnsupportedOSBuild                        = \nThe script supports Windows 10 22H2+
@@ -331,7 +332,7 @@ function InstallVLC
 	$Version = "3.0.18"
 	$LocaleCode = GetLocaleCode
 	# Write-Output $LocaleCode
-	InstallApp "https://get.videolan.org/vlc/$Version/win64/vlc-$Version-win64.exe" "vlc-$Version-win64.exe" "/S /L=$LocaleCode"
+	InstallApp "https://mirror.kumi.systems/videolan/vlc/$Version/win64/vlc-$Version-win64.exe" "vlc-$Version-win64.exe" "/S /L=$LocaleCode"
 }
 
 function InstallNotepadPlusPlus
@@ -375,7 +376,7 @@ function InstallTransmission
 	InstallMsi "https://github.com/transmission/transmission/releases/download/$Version/transmission-$Version-x64.msi" "transmission-$Version-x64.msi"
 }
 
-# Install everything:
+# Install everything
 HEVC -Install
 InstallChrome
 Install7Zip
